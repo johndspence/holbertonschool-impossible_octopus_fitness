@@ -1,0 +1,12 @@
+textarea {
+	height: 50px;
+	width: 300px;
+}
+
+#post_status {
+	display: none;
+}
+
+.reply {
+	display: none;
+}

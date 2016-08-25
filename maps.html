@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+  <link rel="stylesheet" type="text/css"
+    href="mapsjs-ui.css" />
+  <script type="text/javascript" charset="UTF-8"
+    src="https://js.api.here.com/v3/3.0/mapsjs-core.js"></script>
+  <script type="text/javascript" charset="UTF-8"
+    src="https://js.api.here.com/v3/3.0/mapsjs-service.js"></script>
+  <script type="text/javascript" charset="UTF-8"
+    src="https://js.api.here.com/v3/3.0/mapsjs-ui.js"></script>
+  <script type="text/javascript" charset="UTF-8"
+    src="https://js.api.here.com/v3/3.0/mapsjs-mapevents.js"></script>
+
+</head>
+<body >
+  <div id="map"  />
+  <script  type="text/javascript" charset="UTF-8" >
+    
+/**
+ * Moves the map to display over Berlin
+ *
+ * @param  {H.Map} map      A HERE Map instance within the application
+ */
+
+ 
+
+function moveMapToHolberton(map){
+  map.setCenter({lat:37.792085, lng:-122.399368});
+  map.setZoom(16);
+}
+
+window.addEventListener('resize', function() {
+  map.getViewPort().resize();
+});
+/**
+ * Boilerplate map initialization code starts below:
+ */
+
+
+
+//Step 1: initialize communication with the platform
+var platform = new H.service.Platform({
+  app_id: 'aPE5uMRxySREuyn79B3S',
+  app_code: 'p_wH0FjnnvzGxQzs0ZTMTA',
+  useCIT: true,
+  useHTTPS: true
+});
+var defaultLayers = platform.createDefaultLayers();
+
+//Step 2: initialize a map  - not specificing a location will give a whole world view.
+var map = new H.Map(document.getElementById('map'),
+  defaultLayers.normal.map);
+
+//Step 3: make the map interactive
+// MapEvents enables the event system
+// Behavior implements default interactions for pan/zoom (also on mobile touch environments)
+var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
+// // Enable the event system on the map instance:
+// var mapEvents = new H.mapevents.MapEvents(map);
+
+// // Add event listener:
+// map.addEventListener('tap', function(evt) {
+//   // Log 'tap' and 'mouse' events:
+//   console.log(evt.type, evt.currentPointer.type); 
+// });
+// Create the default UI components
+var ui = H.ui.UI.createDefault(map, defaultLayers);
+
+// Now use the map as required...
+// Create an info bubble object at a specific geographic location:
+// var bubble = new H.ui.InfoBubble({ lat:37.792085, lng:-122.399368 }, {
+//         content: '<b>Hello Holberton School!</b>'
+//        });
+
+// // Add info bubble to the UI:
+// ui.addBubble(bubble);
+//zoom Rectangle
+var name = 'zoomrectangle';
+var control = new H.ui.ZoomRectangle();
+ui.addControl(name, control);
+var zoomrectangle = ui.getControl('zoomrectangle');
+zoomrectangle.setAlignment('right-middle');
+// ui.setVisibility(zoom);
+//var control = new H.ui.addControl(ctrlname, H.ui.Control)
+//Getting position in map while tap
+// map.addEventListener('tap', function (evt) {
+//   alert('Clicked at ' + evt.currentPointer.viewportX + ',' +
+//     evt.currentPointer.viewportY);
+// });
+
+// function setUpClickListener(map) {
+//   map.addEventListener('tap', function (evt) {
+//     var coord = map.screenToGeo(evt.currentPointer.viewportX,
+//             evt.currentPointer.viewportY);
+//     alert('Clicked at ' + Math.abs(coord.lat.toFixed(4)) +
+//         ((coord.lat > 0) ? 'N' : 'S') +
+//         ' ' + Math.abs(coord.lng.toFixed(4)) +
+//          ((coord.lng > 0) ? 'E' : 'W'));
+//   });
+// }
+
+// Contextmenu Listener
+// Enable map events, like "contextmenu"
+//var events = new H.mapevents.MapEvents(map);
+
+// Show default controls as well as the Context Menu control
+//var ui = H.ui.UI.createDefault(map, defaultLayers, 'en-EN');
+
+// Add 'Hello Holberton School' context menu item
+map.addEventListener('contextmenu', function(e) { 
+ //function onContextMenuRequested(e) {
+  e.items.push(new H.util.ContextItem({
+  label: 'Hello Holberton School!',
+  // var coord = map.screenToGeo(evt.currentPointer.viewportX,
+  // evt.currentPointer.viewportY);
+  // alert('Clicked at ' + Math.abs(coord.lat.toFixed(4)) +
+  // ((coord.lat > 0) ? 'N' : 'S') +' ' + Math.abs(coord.lng.toFixed(4)) + ((coord.lng > 0) ? 'E' : 'W'));
+
+  callback: function() {
+    map.setZoom(map.getZoom() + 1);
+  }
+  }));
+});
+
+
+moveMapToHolberton(map);
+//onContextMenuRequested(e);
+// setUpClickListener(map);
+  </script>
+</body>
+</html>

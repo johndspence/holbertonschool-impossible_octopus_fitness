@@ -1,0 +1,453 @@
+/* 0. Meyerweb CSS Reset */
+/* 1. General Page Styles */
+/* 2. Container, Header, Section, Aside, Article, and Updates */
+/* 3. "Edit my profile" and "Logout" links */
+/* 4. Logo */
+/* 5. Menu Bar */
+/* 6. Media query for width 768px and below*/
+/* 7. Media query for width between 769px and 992px*/
+/* 8. Userpage.html styles */
+/* 9. Aboutus.html styles */
+
+/* 0. Meyerweb CSS Reset */
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+   */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* ********** 1. General Page Styles ********** */
+
+html * {
+	color: #000;
+	font-family: Arial !important;
+}
+h1 {
+	font-size: 300%;
+	text-align: center;
+	font-style: italic;
+	padding: 20px;
+}
+h2 {
+	font-size: 200%;
+	font-weight: bold;
+	padding-bottom: 5px;
+	padding-left: 2px;
+
+}
+h3 {
+	color: red;
+	font-weight: bold;
+	font-size: large;
+	font-style: italic;
+	padding: 5px;
+}
+h6 {
+	font-weight: bold;
+	margin: auto;
+	text-align: center;
+}
+p {
+    margin: 5px;
+    text-align: justify;
+}
+img {
+	justify-content: flex-start;
+	width: 50px;
+	height: auto;
+}
+a {
+	color: red;
+}
+a:link {
+    text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+	transition-delay: 2s;
+	transition-timing-function: linear;
+    color: black;
+    /*background-color: yellow;*/
+}
+
+.error {
+    color: red;
+}
+
+.date {
+	font-style: italic;
+	font-size: small;
+	margin: 5px;
+}
+.status-updates-img{
+	float: left;
+    width: 200px;
+	height: 200px;
+	padding: 5px 5px 0 5px;
+}
+.notable-img {
+	float: left;
+	width: 90px;
+	height: 90px;
+	padding: 5px 5px 0 5px;
+}
+
+.about p { /*  About Us page  */
+	font-size: 200px;
+	font-family: 'Josefin Slab', serif;
+	font-weight: 400;
+	line-height: 200%;
+}
+
+#para p {
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	font-style: italic;
+}
+
+#pictures img{
+	width: 300px;
+    height: 200px;
+    padding: 30px;
+}
+
+
+
+/* ***** 2. Container Header Section Aside Article Updates Footer ***** */
+
+.container {
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+.header {
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+	padding-left: 40px;
+	background-color: #8cb1d9;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+}
+
+footer {
+	max-width: 100%;
+	background: url("pics/black_footer.jpg");
+	display: flex;
+	flex-direction: column ;
+}
+
+footer a {
+	margin: 10px 50px;
+}
+
+#logolinks {
+	display: flex;
+	align-self: auto;
+	justify-content: space-between; /*Align child elements to left and right ends*/
+}
+
+section {
+	display: flex;
+	flex-direction: column;
+}
+.article_aside {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+article {
+	flex: 2;
+    margin: 10px;
+    flex-direction: column;
+}
+aside {
+	flex: 1;
+	margin: 10px;
+}
+.updates {
+	float: left;
+	border: 1px solid #ccc;
+	border-style: solid;
+	border-radius: 10px;
+	padding: 10px;
+}
+.notable_users {
+	float: left;
+}
+.welcomeversion {
+  	display: block;
+    position: fixed;
+    float: left;
+    bottom: 0;
+    right: 0;
+    padding: 5px 5px;
+    margin: 0 5px;
+    background-color: #ffffb3;
+    font-size: 15px;
+}
+textarea {
+	height: 50px;
+	width: 300px;
+}
+#post1 {
+	display: none;
+}
+.button_and_form {
+	margin: auto;
+}
+.reply {
+	display: none;
+}
+
+noscript #post1_nojs {
+	display: block;
+	margin: 10px 400px;
+}
+
+/*Call to Action Button styles*/
+
+.button {
+	margin: 0 auto;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    padding: 12px 24px;
+    border: 1px solid #291e34;
+    border-radius: 8px;
+    background: #2E2EFE;
+    text-shadow: #17111d 1px 1px 1px;
+    font: normal normal bold 20px arial;
+    color: #ffffff;
+    text-decoration: none;
+}
+.button:hover,
+.button:active{
+    border: 1px solid ##2e213a;
+    background: #000000;
+    background: -webkit-gradient(linear, left top, left bottom, from(#000000), to(#060606));
+    background: -moz-linear-gradient(top, #000000, #060606);
+    background: linear-gradient(to bottom, #000000, #060606);
+    color: #ffffff;
+    text-decoration: none;
+}
+.button:before{
+    content:  "\0000a0";
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+    line-height: 24px;
+    margin: 0 4px -6px -4px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAEx0lEQVRIia2VfWhVdRjHP/ecc7frvXvVtbeYzusLy5fJjHxBSVkGUkynJf4ziJQCq1mJEYJJEtEfEQUGEUqiQVR/aC++FtV0c7pw0ticOt3ddvd2d7fde3ffz73nnF9/nDO9hEmDHng48OP5fV+e5+H8ZGYY9QspXlfG6ifymSNpxMdUkjPFeGQ0vVVyXIw2C6P3rAg2faR2fr61+fud2bvKHDj+F4JfGsu+E7EhISKDQkSGhIj7hBi5JHqPbbv1aS3r/1kvzZhBCFBDVgYh5gd7Ie5tH1a9cuj9306+6NyVWa7M3IMBqTDoBiBMQpMZ16JNWS806l+GIh/49l7kHIA8U/iGFWKHOz+y1KZOQnYe6BroCdCToMWxF8yVKnKiz7Zdu/PVYIyEXF1EztPlLOwOMGlKenRsmZ/e4fJ3Lo12XcbmuUD27DngKAQtDloS0jFyy+a5SoJX9G9uqL/LR7ay9+CBhh92b3hs90s1tlWbK6by1ZiI3Q4SfBjhunlsyHOwTFGwJ5MqmudPXGXlYHeCljDdCLCl/BXHzg9+Yft6O4cb3nz9EK55Jl4qSHrCYwx6vf1To4Otnr6Ri8fbROvZXjwWx2ygsqqIqlef5OXnFlFb4S6VnOv3gK5bkgTqWBeb955ersRT6AQ8ILnuC7YXzpPcs+e7qTHcNVqooW7HoDE0MnwvMuFrudkz/uvRZlqavNzYd5Fz3jDvvZvn2+dUvWBzmkPXIdthZ0ERc5WbfnpEaABbbgUI40FXJGEusSTIKiqT3MWPL0YyFq+ondq1fafPaG/vurD+cPj5z65yePNyNpYagZWgmgSGDSbbkGQU5coQt6OBcXKLgyaBTZi7lbF+5keAAUjgsAWkrMlwFeaah6W8WbeR1JXoqgke6AZ1AGRQun0M+QPhUK4aKADjAbicAc60GwMxchf/tTEiMTTAOPgMS1atLdmCMQV6GsL3QA2ABFoaQ0kYhCZDqndBsLuAnCJANl1IwsS/70RH7+3H1x5nRCV8ooOPjzZQW19XeDy/ODsHtRcS45gDgLgfhsNMKIAWiOMhOVqN4QOnCxxOsNlBsmUsqI4oBmeNgjEmAgfXyO+459sXy0oaUnfN9trNFpKCgT5CV4fwKABjUbpRqEcRQBT0KGiAJJkp28AGSh4UFsLqpVQi0iBSpstsU/h0Jm5Ch5/LkaTpgA4fHQKwKdbYFEw1imGldSZbabMSzMEbFrgBWieMDKOd7OAIYCgAl/roSajgzLMA7KZNBJCTcSZbRJn/YGERqJBuBb8HzvRz8vwtLmOV0zXKkD9CqLKUAuwgpiDQbra1sBLk5UBJBomU4UAF0QfRFggmodlP076fOWBJNAlSOqHxMN5KOwViFMa7YVgQlUGJ9uNweSCnHLKrQCoFHCA00Ccg3gNTXkgJjDP9nNr/E28bBv5pg9PvgTY1yT29i2r/OPRp+PZfYE8gRvyNdTSuLWdjSYAcpQ2UWSBbm4wG0TTGjQDdx65z5Ewn3wLhjAY+eHCGE3SNhdj+V5yu106ze2CS64DReIqWHAdL6paxafVcnipyUZyloERUQnfG6fmxkz/u+GgFJqxpPDzqqlnzST0nnFm4/7UIHNbY8wAnM3wRJSBrJhf+S/wNbS430494JFMAAAAASUVORK5CYII=") no-repeat left center transparent;
+    background-size: 100% 100%;
+}
+.button:focus {
+	border: 1px solid ##2e213a;
+    background: #FF0000;
+    background: -webkit-gradient(linear, left top, left bottom, from(#000000), to(#060606));
+    background: -moz-linear-gradient(top, #000000, #060606);
+    background: linear-gradient(to bottom, #000000, #060606);
+    color: #FF0000;
+    text-decoration: none;
+}
+
+
+/* ********** 3. "Edit my profile" and "Logout" links ********** */
+
+#links {
+	display: flex;
+	flex-direction: row;
+	padding: 5px;
+}
+#links li {
+	display: flex;
+	justify-content: flex-end;
+	flex-direction: row;
+	padding: 5px;
+}
+#links li+li {
+	border-left: 1px solid #000000
+}
+
+
+/* 4. ********** 4. Style for Logo ********** */
+
+#logo {
+	justify-content: space-around;
+	width: 75px;
+	height: 120px;
+}
+
+
+/* 5. ********** Menu Bar ********** */
+
+
+#menu {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+#menu li {
+    padding: 5px;
+}
+#menu li:hover, li:focus, li:active {
+    font-weight: bold;
+    font-style: italic;
+}
+#menu li a {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+    background-color: black;
+    color: white;
+    padding: 5px;
+    text-decoration: none;
+    border-radius: 5px;
+    width: 150px;
+}
+
+/* 6. ********** Media query for width 768px and below********** */
+
+@media all and (max-width: 768px){
+	#logolinks {
+		display: flex;
+		flex-direction: column;
+	}
+	#logo {
+		align-self: center;
+		width: 75px;
+		height: 120px;
+	}
+	.tagline {
+		position: fixed;
+   		top: -9999px;
+   		left: -9999px;
+	}
+	#links {
+		display: flex;
+		flex-direction: column;
+	}
+	#links li+li {
+		border-left: none;
+	}
+	#links li {
+		justify-content: center;
+	}
+	#links li a {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+    	background-color: black;
+    	color: white;
+    	padding: 5px;
+    	text-decoration: none;
+    	border-radius: 5px;
+    	width: 150px;
+	}
+	#menu {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.article_aside {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+	}
+	.user img {
+		justify-content: center;
+	}
+	.welcomeversion {
+		font-size: 5px;
+	}
+}
+
+/* 7. ********** Media query for width between 769px and 992px ********** */
+
+@media (min-width: 769px) and (max-width: 992px){
+
+	.tagline {
+		position: fixed;
+   		top: -9999px;
+   		left: -9999px;
+	}
+	.article_aside {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	}
+	article {
+		display: flex;
+		flex-direction: column;
+	}
+	aside {
+		display: flex;
+		flex-direction: row;
+	}
+	.welcomeversion {
+		font-size: 10px;
+	}
+}
+
+/*8. ********** Styles for userpage.html ********** */
+
+.userpage img {
+	height: 250px;
+	width: 250px;
+}
+
+.userpage {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
